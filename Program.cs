@@ -6,25 +6,18 @@ namespace DataEncodingCSharp
     {
         static void Main(string[] args)
         {
-            char ch;
-            ch = 'A';
-            Console.WriteLine($"ch is storing the value: {ch}");
+            Cipher cipher;
+            cipher = new Cipher(5);
 
-            int ch_decimal;
-            ch_decimal = ch;
-            Console.WriteLine($"The decimal value of ch is: {ch_decimal}");
 
-            int toConvert;
-            Console.Write("Enter an integer: ");
-            toConvert = int.Parse(Console.ReadLine());
+            string encrypted;
+            encrypted = cipher.Encrypt("rosebud");
+            Console.WriteLine($"The encrypted message is: '{encrypted}'");
 
-            char asChar;
-            asChar = (char)toConvert;
-            Console.WriteLine($"The integer {toConvert} cast to char is '{asChar}'");
-
-            char b;
-            b = (char)('A' + 1);
-            Console.WriteLine($"'A' +1 = '{b}'");
+            string decrypted;
+            decrypted = cipher.Decrypt(encrypted);
+            Console.WriteLine($"The decrypted message is: '{decrypted}'");
+            
 
         }
     }
